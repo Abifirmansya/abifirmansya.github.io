@@ -47,6 +47,21 @@ if(assets.workshop){doc.saveGraphicsState();doc.roundedRect(M,y,W,61,2,2,null);d
 text('Bawa laporan ini sebagai bahan latihan.',15,true);text('Latihan menyusun BMC, menghubungkan temuan antarblok, dan memilih fokus perbaikan. Hasil latihan disatukan dalam Business Clarity Canvas Integration.',11);text('Kelas menggunakan latihan mandiri; bukan konsultasi individual atau pemeriksaan BMC satu per satu.',9,false,muted);
 ensure(28);doc.setFillColor(...blue);doc.roundedRect(M,y,W,20,2,2,'F');raw('Tanyakan jadwal Business Clarity Workshop',M+8,y+8,12,W-16,true,[255,255,255]);raw('WhatsApp +62 851-2131-42611',M+8,y+15,9,W-16,false,[225,241,255]);doc.link(M,y,W,20,{url:B.WA});y+=30;
 text('Dasar dan batasan pembacaan',11,true,blue);text('Sembilan area mengacu pada Business Model Canvas, Alexander Osterwalder dan Yves Pigneur. Pertanyaan serta aturan pembacaan merupakan rancangan edukasi Business Clarity dan belum divalidasi sebagai instrumen diagnosis kesehatan bisnis. Hasil bergantung pada jawaban peserta. Tidak ada skor kesehatan total atau kepastian akar masalah.',8.5,false,muted);text('Referensi: Strategyzer - The Business Model Canvas',8.5,true,blue);doc.link(M,y-7,W,7,{url:'https://www.strategyzer.com/library/the-business-model-canvas'});text('Ilustrasi pada laporan dibuat dengan AI; bukan dokumentasi peserta atau acara nyata.',7.5,false,muted);
+
+page('BUSINESS CLARITY COMMUNITY');
+title('06','Lanjutkan belajar bersama\nBusiness Clarity.','Simpan laporan ini sebagai pegangan, lalu lanjutkan belajar dan berdiskusi.');
+text('Gabung Business Clarity Community',16,true);
+text('Bergabung melalui WhatsApp untuk belajar dan berdiskusi tentang bisnis.',11);
+ensure(28);doc.setFillColor(...blue);doc.roundedRect(M,y,W,20,2,2,'F');
+raw('Gabung Business Clarity Community',M+8,y+12,12,W-16,true,[255,255,255]);
+doc.link(M,y,W,20,{url:'https://chat.whatsapp.com/E0A49g7bczE1sGa5VEVDZc'});y+=31;
+text('Follow Instagram @abifirmansya',16,true);
+text('Ikuti konten bisnis dan informasi program Business Clarity berikutnya.',11);
+ensure(28);doc.setFillColor(...navy);doc.roundedRect(M,y,W,20,2,2,'F');
+raw('Follow Instagram @abifirmansya',M+8,y+12,12,W-16,true,[255,255,255]);
+doc.link(M,y,W,20,{url:'https://www.instagram.com/abifirmansya/'});y+=31;
+text('Klik tombol pada PDF untuk membuka tautan. Jika membaca versi cetak, cari @abifirmansya di Instagram.',9,false,muted);
+text('Bergabung dan mengikuti akun bersifat pilihan. Laporan tetap dapat digunakan secara mandiri.',9,false,muted);
 const n=doc.getNumberOfPages();for(let p=1;p<=n;p++){doc.setPage(p);doc.setDrawColor(220,228,235);doc.line(M,284,192,284);raw('Business Clarity | '+state.businessName.slice(0,48),M,290,7,150,false,muted);doc.setFontSize(7);doc.setTextColor(...muted);doc.text(p+' / '+n,192,290,{align:'right'});}return doc;
 }
 root.createBCReport=createReport;if(typeof module!=='undefined')module.exports=createReport;
