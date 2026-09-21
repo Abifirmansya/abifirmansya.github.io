@@ -10,7 +10,7 @@ function setLanguage(language) {
     button.classList.toggle('is-active', button.dataset.lang === language);
     button.setAttribute('aria-pressed', button.dataset.lang === language ? 'true' : 'false');
   });
-  localStorage.setItem('abi-site-language', language);
+  try { localStorage.setItem('abi-site-language', language); } catch { /* Language switching still works when storage is blocked. */ }
 }
 
 languageButtons.forEach((button) => {
@@ -33,4 +33,6 @@ document.querySelectorAll('.site-nav a').forEach((link) => {
   });
 });
 
-setLanguage(localStorage.getItem('abi-site-language') === 'en' ? 'en' : 'id');
+let savedLanguage = 'id';
+try { savedLanguage = localStorage.getItem('abi-site-language') === 'en' ? 'en' : 'id'; } catch { /* Use Indonesian by default. */ }
+setLanguage(savedLanguage);
