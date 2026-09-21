@@ -1,0 +1,56 @@
+.personal-page { --muted:#b3b9c2; }
+.personal-page a:focus-visible,.personal-page button:focus-visible { outline:3px solid #ff9c6e;outline-offset:5px; }
+.skip-link {position:absolute;top:-100px;left:20px;z-index:99;background:#fff;color:#111;padding:12px 20px;}
+.skip-link:focus {top:10px;}
+.personal-page .hero-content {max-width:var(--max);}
+.personal-page .hero .role {max-width:600px;line-height:1.35;}
+.personal-page .hero .promise {max-width:580px;}
+.social-links {display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;}
+.hero .social-links {margin-top:26px;}
+.text-link {display:inline-flex;align-items:center;gap:6px;color:#f3f4f6;text-decoration:underline;text-decoration-color:#ff7b36;text-underline-offset:6px;font-weight:650;line-height:1.65;}
+.text-link:hover {color:#ffab83;}
+.personal-page .section {padding:76px 0;}
+.personal-page .section h2 {font-size:clamp(2rem,3.5vw,3.4rem);line-height:1.12;letter-spacing:-.04em;}
+.about-story {display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start;}
+.prose p {margin:0 0 22px;color:#c2c7cf;font-size:1.08rem;line-height:1.8;}
+.career-list {border-top:1px solid var(--line);}
+.career-row {display:grid;grid-template-columns:180px 1fr;gap:40px;padding:32px 0;border-bottom:1px solid var(--line);}
+.career-row h3 {margin:0;font-size:1.5rem;}
+.career-row p {max-width:760px;margin:10px 0 0;color:var(--muted);}
+.career-row .career-date {margin:0;color:#ff9863;font-weight:700;}
+.career-row .career-role {color:#f4f5f7;}
+.education-list article {padding:0 0 28px;}
+.education-list h3 {margin:4px 0;font-size:1.3rem;}
+.education-list p {margin:8px 0;color:var(--muted);}
+.service-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.service-grid .panel {padding:28px;}
+.service-grid .eyebrow {margin:0 0 24px;color:#ff9863;}
+.contact-panel {display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center;}
+.contact-panel p {max-width:690px;color:var(--muted);}
+.contact-panel .social-links {display:grid;justify-content:start;gap:20px;}
+.personal-page .page-intro h1 {font-size:clamp(2.8rem,5vw,5rem);max-width:800px;line-height:1.05;}
+.page-intro .social-links {margin-top:28px;}
+.case-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;}
+.case-card {border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden;display:flex;flex-direction:column;}
+.case-heading {display:flex;align-items:flex-end;justify-content:space-between;gap:20px;min-height:148px;padding:28px 32px;background:linear-gradient(120deg,#232328,#111216);border-bottom:1px solid var(--line);}
+.case-heading>span {font-size:3.7rem;font-weight:750;letter-spacing:-.06em;line-height:1;color:#ff9764;}
+.case-heading p {font-size:.7rem;letter-spacing:.14em;color:#b8bec6;margin:0;max-width:160px;text-align:right;}
+.case-body {padding:32px;flex:1;display:flex;flex-direction:column;}
+.personal-page .case-body h2 {font-size:1.7rem;line-height:1.18;margin:12px 0 18px;letter-spacing:-.025em;}
+.case-body .eyebrow {margin:0;font-size:.67rem;letter-spacing:.1em;}
+.case-intro {color:#c0c6cf;margin:0;}
+.case-body dl {margin:24px 0 28px;}
+.case-body dt {color:#f3f4f6;font-size:.8rem;font-weight:700;}
+.case-body dd {margin:4px 0 18px;}
+.case-body dd p {margin:0;color:var(--muted);font-size:.95rem;}
+.case-body>.text-link {margin-top:auto;padding-top:20px;border-top:1px solid var(--line);align-self:flex-start;}
+.case-image {height:148px;overflow:hidden;}
+.case-image img {width:100%;height:100%;object-fit:cover;}
+.linkedin-case .case-heading {background:#112238;}
+.linkedin-case .case-heading>span {color:#83beff;}
+.publication-title {padding:24px;border-left:2px solid #83beff;margin:28px 0;color:#dde8f7;font-size:1.18rem;}
+.personal-page .footer-inner {align-items:center;}
+.personal-page .site-footer .social-links {font-size:.86rem;}
+@media(max-width:880px){.about-story,.contact-panel {grid-template-columns:1fr;gap:20px;}.service-grid {grid-template-columns:1fr;}.case-body {padding:24px;}.career-row {grid-template-columns:145px 1fr;gap:24px;}.hero .role,.hero .promise {max-width:580px;}}
+@media(max-width:580px){.case-grid {grid-template-columns:1fr;}.career-row {grid-template-columns:1fr;gap:10px;}.personal-page .section {padding:52px 0;}.personal-page .footer-inner {align-items:flex-start;}.social-links {gap:14px 20px;}.personal-page .page-intro {padding:64px 0 48px;}.case-heading {padding:24px;}.personal-page .case-body h2 {font-size:1.55rem;}}
+@media(prefers-reduced-motion:reduce){html {scroll-behavior:auto;}.personal-page * {transition:none!important;}}
