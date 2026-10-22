@@ -7,13 +7,11 @@
   <meta name="theme-color" content="#090a0c">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/assets/checkup-navigation.css">
 </head>
 <body data-view="profile">
 <a class="skip" href="#main">Langsung ke isi</a>
-<header class="nav"><div class="wrap nav-inner">
-  <a class="brand" href="/" aria-label="Abi Firmansya, halaman utama"><img src="/assets/af-logo.png" width="38" height="38" alt=""><span>Abi Firmansya<small>BUSINESS CLARITY / CHECK-UP</small></span></a>
-  <div class="nav-right"><span class="free-label"><span aria-hidden="true">●</span> FREE CHECK-UP</span><a class="back-to-program" href="/">Halaman utama <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div>
-</div></header>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="Abi Firmansya"><img src="/assets/af-logo.png" alt=""><span>Abi Firmansya</span></a><button class="menu-button" aria-label="Buka menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button><nav id="main-nav" class="site-nav" aria-label="Navigasi utama"><a href="/" data-id="Tentang" data-en="About">Tentang</a><a href="/business-clarity/" aria-current="page">Business Clarity</a><a href="/portfolio/" data-id="Portofolio" data-en="Portfolio">Portofolio</a><div class="language-switch"><button data-lang="id" aria-pressed="true">ID</button><span>/</span><button data-lang="en" aria-pressed="false">EN</button></div></nav></div></header>
 <main id="main">
 <noscript><p class="notice wrap">Aktifkan JavaScript untuk mengisi check-up. Jawaban diproses di browser Anda.</p></noscript>
 <section id="profile" class="view active" aria-labelledby="profileTitle">
@@ -22,7 +20,7 @@
    <div class="intro-facts"><div><b>27</b><span>pertanyaan sederhana</span></div><div><b>9</b><span>blok BMC</span></div><div><b>Gratis</b><span>termasuk laporan PDF</span></div></div>
    <div class="canvas-preview"><div class="preview-label"><span>SATU BISNIS. SEMBILAN BAGIAN.</span><span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><div class="mini-canvas" aria-label="Susunan Business Model Canvas"><div class="partners">Mitra</div><div class="activities">Aktivitas</div><div class="resources">Sumber daya</div><div class="value">Manfaat</div><div class="relationships">Hubungan</div><div class="channels">Saluran</div><div class="customers">Pelanggan</div><div class="costs">Biaya</div><div class="revenue">Pendapatan</div></div><p>BMC membantu Anda melihat bagian-bagian yang membentuk bisnis.</p></div>
   </div>
-  <div class="profile-panel"><div class="panel-top"><span class="step-chip">MULAI DI SINI</span><span class="micro">Tanpa login</span></div><h2>Ceritakan usaha Anda.</h2><p>Isi untuk satu usaha atau satu produk/jasa utama. Check-up ini untuk usaha yang sudah mulai menawarkan atau menjual.</p><p id="savedNotice" class="notice" hidden></p><p id="legacyNotice" class="notice" hidden>Kuesioner sudah diperbarui. Jawaban versi sebelumnya tidak dipakai untuk penilaian baru dan tetap tersimpan di browser ini.</p>
+  <div class="profile-panel"><div class="panel-top"><span class="step-chip">MULAI DI SINI</span><span class="micro">Tanpa login</span></div><h2>Ceritakan usaha Anda.</h2><p>Isi untuk satu usaha atau satu produk/jasa utama. Check-up ini untuk usaha yang sudah mulai menawarkan atau menjual.</p><p class="micro" data-id="Kuesioner dan PDF tersedia dalam bahasa Indonesia." data-en="The questionnaire and PDF are available in Indonesian.">Kuesioner dan PDF tersedia dalam bahasa Indonesia.</p><p id="savedNotice" class="notice" hidden></p><p id="legacyNotice" class="notice" hidden>Kuesioner sudah diperbarui. Jawaban versi sebelumnya tidak dipakai untuk penilaian baru dan tetap tersimpan di browser ini.</p>
    <form id="profileForm">
     <label for="businessName">Nama usaha <span aria-hidden="true">*</span></label><input id="businessName" maxlength="80" placeholder="Contoh: Dapur Rasa" autocomplete="organization" required>
     <label for="industry">Bidang usaha <span aria-hidden="true">*</span></label><select id="industry" required></select>
@@ -55,5 +53,5 @@
 </section>
 </main>
 <footer><div class="wrap footer-inner"><span>Business Clarity<span class="brand-accent">.</span> <small>© 2026</small></span><a href="https://www.instagram.com/abifirmansya/" target="_blank" rel="noopener noreferrer">@abifirmansya <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a><span class="micro">Dibuat untuk owner yang ingin lebih memahami bisnisnya.</span></div></footer>
-<script src="vendor/jspdf.umd.min.js"></script><script src="data.js"></script><script src="assessment.js"></script><script src="report.js"></script><script src="app.js"></script>
+<script src="/assets/site.js"></script><script src="vendor/jspdf.umd.min.js"></script><script src="data.js"></script><script src="assessment.js"></script><script src="report.js"></script><script src="app.js"></script>
 </body></html>

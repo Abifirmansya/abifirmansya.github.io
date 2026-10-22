@@ -1,7 +1,7 @@
 # Business Clarity
 
-- `/business-clarity/`: kuesioner Business Clarity langsung dari menu situs utama, berbahasa Indonesia. Halaman program sebelumnya diganti.
-- `/business-clarity/check-up/`: alamat lama tetap berfungsi memakai aset dan penyimpanan yang sama. Check-up kejelasan model bisnis berbahasa Indonesia. Dibuka pada profil, jawaban tersimpan, atau hasil lengkap terakhir. Tidak memakai API AI, login, atau pengumpulan kontak.
+- `/business-clarity/`: halaman pengantar Business Clarity ID/EN: penjelasan, manfaat, tahapan program, dan tombol menuju kuesioner.
+- `/business-clarity/check-up/`: halaman kuesioner dengan navigasi situs dan pilihan bahasa; pertanyaan dan PDF berbahasa Indonesia. Check-up kejelasan model bisnis berbahasa Indonesia. Dibuka pada profil, jawaban tersimpan, atau hasil lengkap terakhir. Tidak memakai API AI, login, atau pengumpulan kontak.
 - Acuan isi dan aturan: [`../docs/business-clarity-spec.md`](../docs/business-clarity-spec.md).
 - `check-up/data.js`: 27 pertanyaan, tiga per blok BMC, makna opsi dan rekomendasi. Jika tidak membutuhkan mitra luar, dua pertanyaan dilewati (25 pertanyaan).
 - `check-up/assessment.js`: empat tingkat kejelasan per blok dan keseluruhan. Bukan penilaian kesehatan/keuntungan usaha dan belum divalidasi ilmiah.

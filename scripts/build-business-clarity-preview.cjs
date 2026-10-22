@@ -12,6 +12,8 @@ html=html.replace('<title>Business Clarity — Seberapa jelas bisnis Anda?</titl
 html=html.replace('<meta name="description"', '<meta name="robots" content="noindex,nofollow"><meta name="description"');
 html=html.replace('<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">','');
 html=html.replace('<link rel="stylesheet" href="styles.css">',()=>'<style>'+fs.readFileSync(path.join(site,'styles.css'),'utf8')+'</style>');
+html=html.replace('<link rel="stylesheet" href="/assets/checkup-navigation.css">',()=>'<style>'+fs.readFileSync(path.join(root,'assets/checkup-navigation.css'),'utf8')+'</style>');
+html=html.replaceAll('href="/portfolio/"','href="https://abifirmansya.github.io/portfolio/"');
 html=html.replaceAll('href="/business-clarity/"','href="https://abifirmansya.github.io/business-clarity/"');
 html=html.replaceAll('href="/"','href="https://abifirmansya.github.io/"');
 html=html.replace('src="/assets/af-logo.png"','src="data:image/png;base64,'+fs.readFileSync(path.join(root,'assets/af-logo.png')).toString('base64')+'"');
@@ -20,7 +22,7 @@ const banner=`<aside class="testing-bar" aria-label="Versi testing"><div class="
 html=html.replace('<main id="main">',banner+'<main id="main">');
 html=html.replace('</head>','<style>.testing-bar{padding:20px 0;background:#1b1714;border-bottom:1px solid #68442d}.testing-bar strong{font-size:13px;color:#e6be9b}.testing-bar p,.testing-bar label{font-size:12px;color:#e6be9b}.testing-bar p{margin:8px 0}.testing-bar label{display:block;margin:10px 0 5px}.testing-bar select{max-width:650px;background:#101216}.testing-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:12px}.testing-actions a{font-size:13px}.testing-bar .btn{font-size:12px;min-height:40px;padding:10px 14px}</style></head>');
 html=html.replace(/<script src="([^"]+)"><\/script>/g,(_,file)=>{
- let source=fs.readFileSync(path.join(site,file),'utf8');
+ let source=fs.readFileSync(file.startsWith('/')?path.join(root,file.slice(1)):path.join(site,file),'utf8');
  if(file==='data.js')source+='\nBC.storageKey="business-clarity-testing-v5";';
  if(file==='app.js')source=source.replace("$('legacyNotice').hidden=!localStorage.getItem('business-clarity-checkup-v4');","$('legacyNotice').hidden=true;");
  return '<script>'+source.replace(/<\/script/gi,'<\\/script')+'</script>';
