@@ -45,7 +45,7 @@ function createReport(jsPDF,state,result){
  page('KOMUNITAS & EVENT');text('Lanjut belajar bersama.',24,true);text('Bergabung atau ikut event adalah pilihan. Laporan ini tetap gratis dan dapat digunakan tanpa bergabung.',10,false,muted);y+=8;
  text('Grup WhatsApp Business Clarity',17,true);text('Belajar dan berdiskusi bersama tentang bisnis.',11);link('Gabung grup WhatsApp',B.community);y+=7;
  text('Event berikutnya',9,true,green);text('Business Clarity Workshop',19,true);text('Latihan menyusun BMC dan memahami model bisnis Anda. Tanyakan jadwal, biaya, dan ketersediaan tempat melalui WhatsApp.',11);link('Tanyakan event berikutnya',B.WA);
- text('Klik tombol pada PDF untuk membuka tautan. Informasi program juga tersedia di abifirmansya.github.io/business-clarity/.',9,false,muted);y+=4;link('Lihat program Business Clarity','https://abifirmansya.github.io/business-clarity/');
+ text('Klik tombol pada PDF untuk membuka tautan. Kuesioner juga tersedia di abifirmansya.github.io/business-clarity/.',9,false,muted);y+=4;link('Buka kuesioner Business Clarity','https://abifirmansya.github.io/business-clarity/');
  const count=doc.getNumberOfPages();for(let n=1;n<=count;n++){doc.setPage(n);doc.setDrawColor(220,227,218);doc.line(M,282,192,282);raw('Business Clarity | '+state.businessName.slice(0,48),M,290,7,145,false,muted);doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(...muted);doc.text(n+' / '+count,192,290,{align:'right'});}
  return doc;
 }

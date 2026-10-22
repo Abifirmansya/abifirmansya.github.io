@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {JSDOM}=require(process.env.BC_JSDOM||'jsdom'),root=path.resolve(__dirname,'..'),check=path.join(root,'business-clarity/check-up');
 const {jsPDF}=require(path.join(check,'vendor/jspdf.umd.min.js'));
 const language=fs.readFileSync(path.join(root,'assets/site.js'),'utf8');
-for(const page of ['index.html','portfolio/index.html','business-clarity/index.html']){
+for(const page of ['index.html','portfolio/index.html']){
  const w=new JSDOM(fs.readFileSync(path.join(root,page),'utf8'),{url:'https://abifirmansya.github.io/'+page,runScripts:'outside-only'}).window;
  w.localStorage.setItem('abi-site-language','en');w.eval(language);assert.equal(w.document.documentElement.lang,'en');
  for(const el of w.document.querySelectorAll('[data-id][data-en]'))assert.equal(el.textContent,el.dataset.en);
@@ -16,9 +16,13 @@ for(const file of ['index.html','portfolio/index.html','business-clarity/index.h
  for(const el of d.querySelectorAll('[src],a[href],link[href]')){const v=el.getAttribute('src')||el.getAttribute('href');if(!v||v.startsWith('#')||/^(https?:|data:)/.test(v))continue;const target=path.resolve(v.startsWith('/')?root:path.dirname(path.join(root,file)),v.replace(/^\//,''));assert.ok(fs.existsSync(target),file+' -> '+v);}
  assert.equal(d.querySelectorAll('[id]').length,new Set([...d.querySelectorAll('[id]')].map(el=>el.id)).size);w.close();
 }
-const html=fs.readFileSync(path.join(check,'index.html'),'utf8'),scripts=['data.js','assessment.js','report.js','app.js'].map(f=>fs.readFileSync(path.join(check,f),'utf8'));
+const html=fs.readFileSync(path.join(root,'business-clarity/index.html'),'utf8'),scripts=['data.js','assessment.js','report.js','app.js'].map(f=>fs.readFileSync(path.join(check,f),'utf8'));
+// Both entry URLs share the same questionnaire and browser storage.
+assert.equal(html.replaceAll('="check-up/', '="'),fs.readFileSync(path.join(check,'index.html'),'utf8'));
+const home=new JSDOM(fs.readFileSync(path.join(root,'index.html'),'utf8')).window;
+assert.ok(home.document.querySelector('a[href="/business-clarity/"]'));home.close();
 function app({saved,legacy,blocked=false}={}){
- const w=new JSDOM(html,{url:'https://abifirmansya.github.io/business-clarity/check-up/',runScripts:'outside-only'}).window;
+ const w=new JSDOM(html,{url:'https://abifirmansya.github.io/business-clarity/',runScripts:'outside-only'}).window;
  w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};w.confirm=()=>true;w.jspdf={jsPDF};w.URL.createObjectURL=blob=>{w.lastBlob=blob;return 'blob:test'};w.URL.revokeObjectURL=()=>{};const anchorClick=w.HTMLAnchorElement.prototype.click;w.HTMLAnchorElement.prototype.click=function(){if(this.download)w.downloadName=this.download;else anchorClick.call(this);};
  w.localStorage.setItem('abi-site-language','en');if(saved)w.localStorage.setItem('business-clarity-checkup-v5',saved);if(legacy)w.localStorage.setItem('business-clarity-checkup-v4',legacy);
  if(blocked){w.Storage.prototype.getItem=()=>{throw Error('blocked')};w.Storage.prototype.setItem=()=>{throw Error('blocked')};}

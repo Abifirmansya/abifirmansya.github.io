@@ -3,10 +3,10 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {JSDOM}=require(process.env.BC_JSDOM||'jsdom');
 const scenarios=require('./fixtures/business-clarity-scenarios.json'),root=path.resolve(__dirname,'..'),site=path.join(root,'business-clarity/check-up');
 const {jsPDF}=require(path.join(site,'vendor/jspdf.umd.min.js'));
-const html=fs.readFileSync(path.join(site,'index.html'),'utf8'),scripts=['data.js','assessment.js','report.js','app.js'].map(f=>fs.readFileSync(path.join(site,f),'utf8'));
+const html=fs.readFileSync(path.join(root,'business-clarity/index.html'),'utf8'),scripts=['data.js','assessment.js','report.js','app.js'].map(f=>fs.readFileSync(path.join(site,f),'utf8'));
 const out=process.argv[2]||'/tmp/business-clarity-simulations';fs.mkdirSync(out,{recursive:true});
 const normalize=s=>s.replace(/[–—]/g,'-').replace(/[“”]/g,'"').replace(/[‘’]/g,"'").replace(/…/g,'...').replace(/[^\x20-\x7e\u00a0-\u00ff\n]/g,' ').replace(/\s+/g,' ').trim();
-function app(saved){const w=new JSDOM(html,{url:'https://testing.invalid/business-clarity/check-up/',runScripts:'outside-only'}).window;w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};if(saved)w.localStorage.setItem('business-clarity-checkup-v5',saved);scripts.forEach(s=>w.eval(s));return w;}
+function app(saved){const w=new JSDOM(html,{url:'https://testing.invalid/business-clarity/',runScripts:'outside-only'}).window;w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};if(saved)w.localStorage.setItem('business-clarity-checkup-v5',saved);scripts.forEach(s=>w.eval(s));return w;}
 const report=[];
 for(const fixture of scenarios){
  const w=app(),d=w.document,B=w.BC;
