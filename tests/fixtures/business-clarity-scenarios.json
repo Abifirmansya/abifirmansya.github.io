@@ -1,0 +1,12 @@
+[
+ {"id":"01","name":"Pilihan bisnis belum ditentukan","blocks":[0,0,0,0,0,0,0,0,0],"expectedOverall":"Rendah","expectedStatuses":[0,0,0,0,0,0,0,0,0],"expectedCount":27},
+ {"id":"02","name":"Semua bagian masih umum","blocks":[1,1,1,1,1,1,1,1,1],"expectedOverall":"Sedang","expectedStatuses":[1,1,1,1,1,1,1,1,1],"expectedCount":27},
+ {"id":"03","name":"Sudah spesifik, belum lengkap","blocks":[2,2,2,2,2,2,2,2,2],"expectedOverall":"Tinggi","expectedStatuses":[2,2,2,2,2,2,2,2,2],"expectedCount":27},
+ {"id":"04","name":"Semua bagian sudah jelas","blocks":[3,3,3,3,3,3,3,3,3],"expectedOverall":"Sangat tinggi","expectedStatuses":[3,3,3,3,3,3,3,3,3],"expectedCount":27},
+ {"id":"05","name":"Pelanggan belum jelas, lainnya jelas","blocks":[0,3,3,3,3,3,3,3,3],"expectedOverall":"Sedang","expectedStatuses":[0,3,3,3,3,3,3,3,3],"expectedCount":27},
+ {"id":"06","name":"Manfaat masih umum, lainnya jelas","blocks":[3,1,3,3,3,3,3,3,3],"expectedOverall":"Tinggi","expectedStatuses":[3,1,3,3,3,3,3,3,3],"expectedCount":27},
+ {"id":"07","name":"Pendapatan belum jelas, lainnya jelas","blocks":[3,3,3,3,0,3,3,3,3],"expectedOverall":"Sedang","expectedStatuses":[3,3,3,3,0,3,3,3,3],"expectedCount":27},
+ {"id":"08","name":"Usaha mandiri tanpa mitra luar","blocks":[3,3,3,3,3,3,3,3,3],"overrides":{"partnerNeed":4},"expectedOverall":"Sangat tinggi","expectedStatuses":[3,3,3,3,3,3,3,3,3],"expectedCount":25},
+ {"id":"09","name":"Satu jawaban pelanggan belum jelas","blocks":[3,3,3,3,3,3,3,3,3],"overrides":{"target":0},"expectedOverall":"Sangat tinggi","expectedStatuses":[2,3,3,3,3,3,3,3,3],"expectedCount":27},
+ {"id":"10","name":"Jawaban campuran di sembilan blok","blocks":[3,2,1,2,1,2,3,3,1],"expectedOverall":"Tinggi","expectedStatuses":[3,2,1,2,1,2,3,3,1],"expectedCount":27}
+]
